@@ -1,0 +1,2 @@
+ssh-keygen -t ed22519 -C "<email ID>"
+# Chosing the default option will create ssh key in user's home directory
