@@ -8,6 +8,12 @@ ssh-keygen -t ed22519 -C "<email ID>"
 git clone <http or ssh url of the repository>
 # Will clone the repository to current working pathS
 
+git add .
+# used in Git to stage all changes in the current directory (and its subdirectories) for the next commit
+git commit -m "commit message"
+# used in Git to create a commit with a specific message. A commit represents a snapshot of the changes staged in your repository
+git push origin main
+#used to upload (push) local commits from your main branch to a remote repository (origin)
 
 [ vagrant ]
 
@@ -17,7 +23,7 @@ vagrant init ubuntu/jammy64
 # creates a Vagrantfile with Ubuntu 22.04 LTS as the base OS
 vagrant up
 # starts the VM using the provider (default is VirtualBox)
-vagrant ssh
+vagrant ssh 
 # Logs into the running VM
 
 vagrant suspend   # Pause the VM (saves state)
