@@ -7,3 +7,19 @@ ssh-keygen -t ed22519 -C "<email ID>"
 
 git clone <http or ssh url of the repository>
 # Will clone the repository to current working pathS
+
+
+[ vagrant ]
+
+vagrant init
+# creates a Vagrantfile in the current working directory
+vagrant init ubuntu/jammy64
+# creates a Vagrantfile with Ubuntu 22.04 LTS as the base OS
+vagrant up
+# starts the VM using the provider (default is VirtualBox)
+vagrant ssh
+# Logs into the running VM
+
+vagrant suspend   # Pause the VM (saves state)
+vagrant halt      # Shut down the VM
+vagrant destroy   # Completely remove the VM
