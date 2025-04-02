@@ -1,0 +1,7 @@
+Q. Check kernel routing information
+    A.  # route -n
+        # netstat -r
+        # ip route
+
+Q. File that specify default gateway
+    A.  /etc/sysconfig/network
