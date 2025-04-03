@@ -40,6 +40,7 @@ firewall-cmd --set-log-denied=all       #Enable Logging for Dropped Packets
 12. xfs_grow /dev/mapper/rhel-opt  (for xfs system)
 or
     resize2fx /dev/mapper/rhel-opt  (for ext4 file system)
+13. df -h   #Verify whether file system space has icreased or not
 
 [ vagrant ]
 
