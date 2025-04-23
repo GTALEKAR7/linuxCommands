@@ -1,10 +1,18 @@
-[ ssh-keygen ]
+[ yum/rpm ]
+yum install <package>   # installs the package if available in repository
+yum history     # view the transaction history of package installs, updates, removals, and more that were performed using yum
+yum history undo <ID>   # undo a specific transaction
+yum history redo <ID>   # redo a specific transaction
+rpm -qa     # Lists all the packages that has been installed
+rpm -qi <package>   # gives the detailed information about the package
+rpm -qc <package>   # gives the info about the config files of the package
+needs-restarting -r     # Tells if system reboot is required after updation of packages
 
+[ ssh-keygen ]
 ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa -C "<email ID>"      #Generate a New SSH Key Pair (Default RSA)
 ssh-copy-id user@remote-server      #Copy SSH Key to a Remote Server (for Passwordless Login)
 
 [ git ]
-
 git clone <http or ssh url of the repository>       # Will clone the repository to current working pathS
 git add .       # used in Git to stage all changes in the current directory (and its subdirectories) for the next commit
 git commit -m "commit message"      # used in Git to create a commit with a specific message. A commit represents a snapshot of the changes staged in your repository
@@ -39,16 +47,14 @@ firewall-cmd --set-log-denied=all       #Enable Logging for Dropped Packets
 11. lvdisplay # verify whether logical volume has extended
 12. xfs_grow /dev/mapper/rhel-opt  (for xfs system)
 or
-    resize2fx /dev/mapper/rhel-opt  (for ext4 file system)
-13. df -h   #Verify whether file system space has icreased or not
+    resize2fs /dev/mapper/rhel-opt  (for ext4 file system)
+13. df -h   #Verify whether file system space has increased or not
 
 [ vagrant ]
-
 vagrant init    # creates a Vagrantfile in the current working directory
 vagrant init ubuntu/jammy64     # creates a Vagrantfile with Ubuntu 22.04 LTS as the base OS
 vagrant up      # starts the VM using the provider (default is VirtualBox)
 vagrant ssh     # Logs into the running VM
-
 vagrant suspend   # Pause the VM (saves state)
 vagrant halt      # Shut down the VM
 vagrant destroy   # Completely remove the VM

@@ -1,3 +1,5 @@
 1. Sticky bit, uid, gid and it's associated concept
 2. red hat package manager, yum. Installing with depedency or without depedency.
 3. concept of runlevel and how to change via cli
+4. Difference between rhel8 and rhel9
+5. pre-requisites and post installation of leapp upgrade

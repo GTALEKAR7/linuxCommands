@@ -5,3 +5,6 @@ Q. Check kernel routing information
 
 Q. File that specify default gateway
     A.  /etc/sysconfig/network
+
+Q. Difference between update and upgrade
+    A. Upgrade deletes the old packages whereas Update will keep the old packages so that we can rollback
