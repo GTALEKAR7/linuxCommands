@@ -1,4 +1,5 @@
 [ yum/rpm ]
+yum update  # update all installed packages on a system to their latest available versions from the configured repositories
 yum install <package>   # installs the package if available in repository
 yum history     # view the transaction history of package installs, updates, removals, and more that were performed using yum
 yum history undo <ID>   # undo a specific transaction
