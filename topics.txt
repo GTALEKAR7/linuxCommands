@@ -3,3 +3,6 @@
 3. concept of runlevel and how to change via cli
 4. Difference between rhel8 and rhel9
 5. pre-requisites and post installation of leapp upgrade
+6. NFS
+7. Priority of process (nice command)
+8. Add wget, curl and tar command also

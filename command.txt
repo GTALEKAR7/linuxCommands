@@ -1,17 +1,29 @@
-[ yum/rpm ]
+[ yum/dnf/rpm ]
 yum update  # update all installed packages on a system to their latest available versions from the configured repositories
 yum install <package>   # installs the package if available in repository
+yum remove <remove>     # removes the package from the system
+yum upgrade <package>   # upgrades a package with no rollback available
+yum update <package>    # updates a package which can be rollbacked
+yum check-update    # To check the available updates for packages
 yum history     # view the transaction history of package installs, updates, removals, and more that were performed using yum
 yum history undo <ID>   # undo a specific transaction
 yum history redo <ID>   # redo a specific transaction
+yum -options    # Can see what options we can use using yum
+dnf list available  # list the available packages in repositories
+dnf list installed  # list the packages intalled in the server
+dnf info <package>  # gives information about the package
+dnf search <package>    # used to search for packages in the enabled repositories
+rpm -ivh <package>  # installs a package
+rpm -evh <package>  # erases a package
+rpm -U <package>    # Updates a package
 rpm -qa     # Lists all the packages that has been installed
 rpm -qi <package>   # gives the detailed information about the package
 rpm -qc <package>   # gives the info about the config files of the package
-needs-restarting -r     # Tells if system reboot is required after updation of packages
+needs-restarting -r     # Tells if system reboot is required after updation of packages(yum-utils package required to run the command)
 
 [ ssh-keygen ]
-ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa -C "<email ID>"      #Generate a New SSH Key Pair (Default RSA)
-ssh-copy-id user@remote-server      #Copy SSH Key to a Remote Server (for Passwordless Login)
+ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa -C "<email ID>"      # Generate a New SSH Key Pair (Default RSA)
+ssh-copy-id user@remote-server      # Copy SSH Key to a Remote Server (for Passwordless Login)
 
 [ git ]
 git clone <http or ssh url of the repository>       # Will clone the repository to current working pathS
@@ -46,7 +58,7 @@ firewall-cmd --set-log-denied=all       #Enable Logging for Dropped Packets
 9.  lvdisplay # Displays list of logical volume
 10. lvextend -l +100%FREE /dev/mapper/rhel-opt # Extends the volume group to alloted size. Note: check which logical volume you want to increase by checking in "df -h" command
 11. lvdisplay # verify whether logical volume has extended
-12. xfs_grow /dev/mapper/rhel-opt  (for xfs system)
+12. xfs_grow /dev/mapper/rhel-opt  (for xfs file system)
 or
     resize2fs /dev/mapper/rhel-opt  (for ext4 file system)
 13. df -h   #Verify whether file system space has increased or not
