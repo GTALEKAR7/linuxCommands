@@ -1,0 +1,2 @@
+1. under the hood yum uses rpm to install packages
+2. umount will not work if the file system that your unmounting is in use

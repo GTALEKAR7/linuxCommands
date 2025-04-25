@@ -26,16 +26,8 @@ needs-restarting -r     # Tells if system reboot is required after updation of p
 ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa -C "<email ID>"      # Generate a New SSH Key Pair (Default RSA)
 ssh-copy-id user@remote-server      # Copy SSH Key to a Remote Server (for Passwordless Login)
 
-[ git ]
-git clone <http or ssh url of the repository>       # Will clone the repository to current working pathS
-git add .       # used in Git to stage all changes in the current directory (and its subdirectories) for the next commit
-git commit -m "commit message"      # used in Git to create a commit with a specific message. A commit represents a snapshot of the changes staged in your repository
-git push origin main    #used to upload (push) local commits from your main branch to a remote repository (origin)
-git fetch origin    # Retrieves the latest updates from the remote but doesn't merge them
-git reset --hard origin/main        # Forces your local branch to match the remote main branch (overwrites local changes)
-
 [ firewall-cmd ]
-firewall-cmd --state    #checks firewall status
+firewall-cmd --state    # checks firewall status
 firewall-cmd --list-all     #lists all active firewall rules
 firewall-cmd --permanent --add-port=80/tcp      #Allow a Specific Port (e.g., HTTP - Port 80)
 firewall-cmd --reload       #Reloads and updates the changes made in firewall setting
@@ -46,6 +38,14 @@ firewall-cmd --get-services     #List Available Services
 firewall-cmd --permanent --add-source=192.168.1.100     #Allow a Specific IP Address
 firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="192.168.1.200" reject'     #Block a Specific IP Address
 firewall-cmd --set-log-denied=all       #Enable Logging for Dropped Packets
+
+[ git ]
+git clone <http or ssh url of the repository>       # Will clone the repository to current working pathS
+git add .       # used in Git to stage all changes in the current directory (and its subdirectories) for the next commit
+git commit -m "commit message"      # used in Git to create a commit with a specific message. A commit represents a snapshot of the changes staged in your repository
+git push origin main    #used to upload (push) local commits from your main branch to a remote repository (origin)
+git fetch origin    # Retrieves the latest updates from the remote but doesn't merge them
+git reset --hard origin/main        # Forces your local branch to match the remote main branch (overwrites local changes)
 
 [ vagrant ]
 vagrant init    # creates a Vagrantfile in the current working directory
