@@ -9,6 +9,7 @@ yum history     # view the transaction history of package installs, updates, rem
 yum history undo <ID>   # undo a specific transaction
 yum history redo <ID>   # redo a specific transaction
 yum -options    # Can see what options we can use using yum
+yum install --nodeps <package>  # installs package without depedency
 dnf list available  # list the available packages in repositories
 dnf list installed  # list the packages intalled in the server
 dnf info <package>  # gives information about the package
@@ -45,23 +46,6 @@ firewall-cmd --get-services     #List Available Services
 firewall-cmd --permanent --add-source=192.168.1.100     #Allow a Specific IP Address
 firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="192.168.1.200" reject'     #Block a Specific IP Address
 firewall-cmd --set-log-denied=all       #Enable Logging for Dropped Packets
-
-[ Increase disk space(LVM) ]
-1.  # Attach hard disk to your system
-2.  lsblk   # Check whether the new hard disk has attached successfully
-3.  pvdisplay  # displays the physical volume
-4.  pvcreate /dev/sdc  # Create physical volume(Note: /dev/sdc is for example and the actual path of physical volume attached can be obtained using lsblk command)
-5.  pvdisplay # verify the physical volume created
-6.  vgdisplay # Displays all volume group Available
-7.  vgextend rhel /dev/sdc   # Extends volume group "rhel". Volume group information can be obtained from vgdisplay command.
-8.  vgdisplay # verify whether volume group has been extended
-9.  lvdisplay # Displays list of logical volume
-10. lvextend -l +100%FREE /dev/mapper/rhel-opt # Extends the volume group to alloted size. Note: check which logical volume you want to increase by checking in "df -h" command
-11. lvdisplay # verify whether logical volume has extended
-12. xfs_grow /dev/mapper/rhel-opt  (for xfs file system)
-or
-    resize2fs /dev/mapper/rhel-opt  (for ext4 file system)
-13. df -h   #Verify whether file system space has increased or not
 
 [ vagrant ]
 vagrant init    # creates a Vagrantfile in the current working directory

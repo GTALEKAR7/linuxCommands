@@ -1,0 +1,16 @@
+[ Increase disk space(LVM) ]
+1.  # Attach hard disk to your system
+2.  lsblk   # Check whether the new hard disk has attached successfully
+3.  pvdisplay  # displays the physical volume
+4.  pvcreate /dev/sdc  # Create physical volume(Note: /dev/sdc is for example and the actual path of physical volume attached can be obtained using lsblk command)
+5.  pvdisplay # verify the physical volume created
+6.  vgdisplay # Displays all volume group Available
+7.  vgextend rhel /dev/sdc   # Extends volume group "rhel". Volume group information can be obtained from vgdisplay command.
+8.  vgdisplay # verify whether volume group has been extended
+9.  lvdisplay # Displays list of logical volume
+10. lvextend -l +100%FREE /dev/mapper/rhel-opt # Extends the volume group to alloted size. Note: check which logical volume you want to increase by checking in "df -h" command
+11. lvdisplay # verify whether logical volume has extended
+12. xfs_grow /dev/mapper/rhel-opt  (for xfs file system)
+or
+    resize2fs /dev/mapper/rhel-opt  (for ext4 file system)
+13. df -h   #Verify whether file system space has increased or not
