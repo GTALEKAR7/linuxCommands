@@ -16,6 +16,9 @@ or
 13. df -h   #Verify whether file system space has increased or not
 
 [ NFS setups ]
+NFSv4: Only TCP 2049 is required
+NFSv3: Needs TCP/UDP 111 (portmapper) + TCP/UDP 2049 (nfsd) + dynamic ports for mountd, statd, and lockd
+
 nfs server setup
 1. yum install nfs-utils
 2. mkdir /filesharing/nfs
