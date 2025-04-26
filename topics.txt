@@ -1,4 +1,4 @@
-1. Sticky bit, uid, gid and it's associated concept
+1. Sticky bit, uid, gid, umask and it's associated concept
 2. red hat package manager, yum. Installing with depedency or without depedency.
 3. concept of runlevel and how to change via cli
 4. Difference between rhel8 and rhel9
@@ -11,3 +11,4 @@
 11. kernel panic
 12. inode, id command
 13. samba configuration
+14. adding users and handling them
