@@ -1,3 +1,3 @@
 1. under the hood yum uses rpm to install packages
-2. umount will not work if the file system that your unmounting is in use
+2. umount will not work if the file system that your unmounting is in use (fuser -cu /dev/sda    #to check if any user is accessing the file)
 3. Locking in the context of NFS (or filesystems in general) means reserving access to a file (or part of it) so that multiple users or processes don’t mess each other up when trying to read/write at the same time

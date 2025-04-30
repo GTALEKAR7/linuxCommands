@@ -12,3 +12,7 @@
 12. inode, id command
 13. samba configuration
 14. adding users and handling them
+15. what to do if you go into grub mode (kernel patching issues). kernel panic
+16. symlink (ln command)
+17. sudoers file and winbind
+18. parted/partprobe/fdisk command

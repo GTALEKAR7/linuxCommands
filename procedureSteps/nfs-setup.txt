@@ -1,0 +1,26 @@
+[ NFS setup ]
+
+
+nfs server setup
+1. yum install nfs-utils
+2. mkdir /filesharing/nfs
+3. echo "/filesharing/nfs <ip_address>(rw,sync,no_root_squash)" >> /etc/exports
+4. cat /etc/exports     # Verify the exports file
+5. systemctl enable --now rpcbind nfs-server    # enable the service post startup and starts the service
+6. systemctl status rpcbind nfs-server  # Verify the status of the service
+7. firewall-cmd --permanent --add-service={nfs,rpc-bind,mountd}
+8. firewall-cmd --reload
+9. exportfs -v  # Verifies if the export file is populated properly
+
+nfs client setup
+1. yum install nfs-utils
+2. systemctl enable --now rpcbind nfs-server    # enable the service post startup and starts the service
+3. systemctl status rpcbind nfs-server  # Verify the status of the service
+4. mkdir /mnt/nfs-share
+5. firewall-cmd --permanent --add-service={nfs,rpc-bind,mountd}
+6. firewall-cmd --reload
+7. mount -t nfs <ip_address>:/filesharing/nfs /mnt/nfs-share
+8. df -h    # verify if the nfs is mounted
+9. echo "<ip_address>:/filesharing/nfs  /mnt/nfs-share  nfs  defaults  0 0" >> /etc/fstab     # Do this if you want a permanent mount point even after reboot
+10. systemctl daemon-reload
+11. mount -a
