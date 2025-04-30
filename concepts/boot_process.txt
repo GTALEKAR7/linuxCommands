@@ -10,10 +10,38 @@ BIOS
 Apart from BIOS, UEFI (Unified Extensible Firmware Interface) is used.
 
 
-Master Boot Record
-. 512 bytes, first sector of any bootable device contains machine
-code instructions to boot a machine and having following info
-Boot loader (446 bytes)
-o Partition Table (64 bytes)
-o Error Checking (2 bytes)
-. It will load the boot loader into the memory and handover to it
+MBR
+- Master Boot Record
+- 512 bytes, first sector of any bootable device contains machine code instructions to boot a machine and having following info
+    . Boot loader (446 bytes)
+    . Partition Table (64 bytes)
+    . Error Checking (2 bytes)
+- It will load the boot loader(GRUB) into the memory and handover to it
+
+GRUB
+- Grand Unified Bootloader
+- Load /boot/grub2/grub.cfg at boot time
+- At this stage, User will see GUI asking different OS or kernels configured to boot.
+- Once you selected the kernel, it locates the corresponding kernel binary    /boot/vmlinuz-< kernel-version>
+- Main job is to load kernel and initrd/initramfs image into memory
+- Once load kernel in RAM, it passes control to it
+In RHEL7
+    . Default boot loader is GRUB2
+    . GRUB is for x86 architecture, it could be different for others arch like for Intel Itanium - ELILO
+
+Kernel
+- First kernel is loaded into read-only mode
+- Initramfs/initrd gets decompressed and then it first loads temporary file system.
+- Initrd then detects and load the drivers from temporary filesystem to load actual file system.
+- Mount other partitions like LVM, RAID etc and unmount itself.
+- Once main filesystem is mounted, kernel initialize the first process init/SystemD
+- You can find these images under /boot folder
+
+
+SystemD
+- First service loaded with process ID 1
+- Start all required processes  /etc/systemd/system/default.target
+- To bring the system to the run-level/targets (0-6)
+- You can find the different runlevels files under
+    . /usr/lib/systemd/system
+    . ls -l runlevel*
