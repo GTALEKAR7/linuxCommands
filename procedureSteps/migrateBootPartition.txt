@@ -1,0 +1,24 @@
+[ Migrate boot partition to other storage disk partition in RHEL ]
+1. # Attach the new hark disk into the system. Verify using lsblk command
+2. # Assume /dev/sda and /dev/sdb two disk. Below will be the steps to migrate /boot from /dev/sda to new device /dev/sdb
+3. parted /dev/sdb mklabel msdos    # Creates partition table of MS-DOS or MBR        
+4. parted /dev/sdb mkpart p xfs 1MiB 1024MiB    # Creates the partition
+5. mkfs.xfs /dev/sdb1   # Formats the partition with a filesystem
+6. mount /dev/sdb1 /mnt     # mount to temparary point
+7. df -h    # Verify the mount point
+8. cp -a /boot/* /mnt/  # Copy all files from /boot to new partition
+9. umount /mnt /boot    # Unmount the files systems /mnt and /boot
+10. df -h   # Verify the unmounted partition
+11. blkid /dev/sdb1     # Provides id's of the partition. In this case we will use UUID
+12. # Grab the UUID from previous command and replace the same for /boot partition in /etc/fstab file. Make sure the files system format is same as created
+13. systemctl daemon-reload    # reload systemd to update the fstab changes into the system
+14. mount /boot     # mounts the /boot to new partition
+15. df -h   # Verify whether /boot has been mounted into new partition
+16. grub2-install /dev/sda  # install the grub bootloader on the primary device
+17. grub2-install /dev/sdb  # install the grub bootloader on the primary device
+18. grub2-mkconfig -o /etc/grub2.cfg    # rebuild the grub menu
+19. reboot now  # post reboot verify the changes
+20. # Post reboot remove bootable flag from /dev/sda1 and put it in /dev/sdb1
+21. fdisk /dev/sda  # options to provide  'p' -> 'a' -> '1' -> 'w'
+22. fdisk /dev/sdb  # options to provide  'p' -> 'a' -> '1' -> 'w'
+23. reboot now  # reboot again and verify wheter everything is proper or not
