@@ -1,1 +1,19 @@
-.
+BIOS -> MBR -> GRUB -> Kernel -> SystemD
+
+
+BIOS
+- Basic I/0 system.
+- First Program that executes which is stored in read-only memory on motherboard of computer.
+- Perform POST (power-on self-test) verify the hardware components and peripheral to ensure if computer is in working condition.
+- Check for bootable device like pendrive, hardisk etc.
+- Handover control to first sector of device i.e. MBR
+Apart from BIOS, UEFI (Unified Extensible Firmware Interface) is used.
+
+
+Master Boot Record
+. 512 bytes, first sector of any bootable device contains machine
+code instructions to boot a machine and having following info
+Boot loader (446 bytes)
+o Partition Table (64 bytes)
+o Error Checking (2 bytes)
+. It will load the boot loader into the memory and handover to it
