@@ -16,3 +16,4 @@
 16. symlink (ln command)
 17. sudoers file and winbind
 18. parted/partprobe/fdisk command
+19. file system issues (clearing space/recovery of directory)
