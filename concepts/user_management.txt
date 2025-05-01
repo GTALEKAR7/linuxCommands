@@ -1,0 +1,9 @@
+useradd <user_name>     # creates a new user
+id <user_name>          # gives info about the user for eg. uid,gid
+useradd -g <group_name> -s /bin/bash -c "description" -m -d /home/<user_name> <user_name>   # -m to create home directory| -d mention the path for user home directory
+userdel <name_of_user>  # Deletes the user
+userdel -r <name_of_user> # will remove home directory
+userdel -f <name_of_user> # force delete even if the user is logged in
+usermod -G <group_name> <user_name> # To add user to a new group, but default group will remain same
+usermod -g <group_name> <user_name> # To change the default group
+# -L -U  (Lock/Unlock a user)

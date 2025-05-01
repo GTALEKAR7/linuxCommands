@@ -24,6 +24,14 @@ rpm -qi <package>   # gives the detailed information about the package
 rpm -qc <package>   # gives the info about the config files of the package
 needs-restarting -r     # Tells if system reboot is required after updation of packages(yum-utils package required to run the command)
 
+[ grub ]
+grubby --default-kernel     # Shows the default kernel used at boot
+grubby --default-index      # Shows the index of the default kernel
+grubby --info=ALL           # Lists all installed kernels with their options
+grubby --set-default /boot/vmlinuz-<version>    # Sets a specific kernel as the default
+grubby --remove-kernel /boot/vmlinuz-<version>  # Removes a specific kernel entry from GRUB(Does not delete files)
+
+
 [ ssh-keygen ]
 ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa -C "<email ID>"      # Generate a New SSH Key Pair (Default RSA)
 ssh-copy-id user@remote-server      # Copy SSH Key to a Remote Server (for Passwordless Login)
