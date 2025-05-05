@@ -1,0 +1,5 @@
+RESTRICTED DELETION FLAG OR STICKY BIT
+
+- Only file owner, directory owner can delete or rename a file or directory.
+- it shows as 't' or 'T'
+- chmod o+t <folder name> # for others if executable permission is there then it will show as 't' else 'T'
