@@ -5,7 +5,7 @@
 5. pre-requisites and post installation of leapp upgrade
 6. NFS
 7. Priority of process (nice command)
-8. Add wget, curl and tar command also
+8. Add wget, curl, tar, find command also
 9. swap concept and why do we need it
 10. root password resest using rd.break
 11. kernel panic
