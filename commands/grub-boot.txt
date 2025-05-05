@@ -1,0 +1,6 @@
+[ grub ]
+grubby --default-kernel     # Shows the default kernel used at boot
+grubby --default-index      # Shows the index of the default kernel
+grubby --info=ALL           # Lists all installed kernels with their options
+grubby --set-default /boot/vmlinuz-<version>    # Sets a specific kernel as the default
+grubby --remove-kernel /boot/vmlinuz-<version>  # Removes a specific kernel entry from GRUB(Does not delete files)

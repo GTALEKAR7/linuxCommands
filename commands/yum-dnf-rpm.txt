@@ -1,0 +1,25 @@
+[ yum/dnf/rpm ]
+yum update  # update all installed packages on a system to their latest available versions from the configured repositories
+yum install <package>   # installs the package if available in repository
+yum remove <remove>     # removes the package from the system
+yum upgrade <package>   # upgrades a package with no rollback available
+yum update <package>    # updates a package which can be rollbacked
+yum check-update    # To check the available updates for packages
+yum history     # view the transaction history of package installs, updates, removals, and more that were performed using yum
+yum history undo <ID>   # undo a specific transaction
+yum history redo <ID>   # redo a specific transaction
+yum -options    # Can see what options we can use using yum
+yum install --nodeps <package>  # installs package without depedency
+yum makecache   # download and cache the metadata of enabled YUM repositories and stores it in local cache usually in /var/cache/yum
+yum clean all   # to remove all cached data that YUM uses for package management on RHEL-based systems
+dnf list available  # list the available packages in repositories
+dnf list installed  # list the packages intalled in the server
+dnf info <package>  # gives information about the package
+dnf search <package>    # used to search for packages in the enabled repositories
+rpm -ivh <package>  # installs a package
+rpm -evh <package>  # erases a package
+rpm -U <package>    # Updates a package
+rpm -qa     # Lists all the packages that has been installed
+rpm -qi <package>   # gives the detailed information about the package
+rpm -qc <package>   # gives the info about the config files of the package
+needs-restarting -r     # Tells if system reboot is required after updation of packages(yum-utils package required to run the command)

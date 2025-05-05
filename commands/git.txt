@@ -1,0 +1,7 @@
+[ git ]
+git clone <http or ssh url of the repository>       # Will clone the repository to current working pathS
+git add .       # used in Git to stage all changes in the current directory (and its subdirectories) for the next commit
+git commit -m "commit message"      # used in Git to create a commit with a specific message. A commit represents a snapshot of the changes staged in your repository
+git push origin main    #used to upload (push) local commits from your main branch to a remote repository (origin)
+git fetch origin    # Retrieves the latest updates from the remote but doesn't merge them
+git reset --hard origin/main        # Forces your local branch to match the remote main branch (overwrites local changes)
