@@ -1,0 +1,21 @@
+[ Adding file system to new logical volume ]
+
+1. # Attach hard disk to your system
+2. lsblk   # Check whether the new hard disk has attached successfully
+    Assume the new added disk to be /dev/sdb
+3. fdisk /dev/sdb  # create a partition. options to provide 'n' -> all other options can be kept default based on the preference
+4. lsblk    # check whether /dev/sdb1 created or not
+5. pvdisplay  # displays the physical volume
+6. pvcreate /dev/sdb1  # Creates a new physical volume
+7. pvdisplay    # verify the physical volume created
+8. vgdisplay # Displays all volume group Available
+9. vgextend cs_vbox /dev/sdb1   # extend the volume group (Assume the existing volume group is cs_vbox)
+10. vgdisplay # verify whether volume group has been extended
+11. lvdisplay # Displays list of logical volume
+12. lvcreate -l 100%FREE -n new_lv cs_vbox  # creates new logical volume "new_lv" in volume group "cs_vbox"
+13. lvdisplay # verify whether new logical volume created or not
+14. mkfs.ext4 /dev/cs_vbox/new_lv   # format the logical volume
+15. mkdir /new_volume   # create folder that you want to mount
+16. mount /dev/mapper/cs_vbox-new_lv /new_volume    # now mount it
+17. df -h   # verify whether new file system has been mounted or not
+18. # Insert proper entry in /etc/fstab to make the changes permanent
