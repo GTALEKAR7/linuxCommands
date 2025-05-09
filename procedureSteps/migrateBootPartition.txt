@@ -1,4 +1,5 @@
 [ Migrate boot partition to other storage disk partition in RHEL ]
+
 1. # Attach the new hark disk into the system. Verify using lsblk command
 2. # Assume /dev/sda and /dev/sdb two disk. Below will be the steps to migrate /boot from /dev/sda to new device /dev/sdb
 3. parted /dev/sdb mklabel msdos    # Creates partition table of MS-DOS or MBR        
