@@ -1,0 +1,5 @@
+# always start the file with #!/bin/bash
+read name   # takes input from user and store it in name variable
+read -p "Enter your name: " name    # displays the statement, takes input from user and store it in name variable
+read -s -p "Enter your password: " pass     # -s argument is to read without showing input. for eg. Useful if your entering password
+echo -e "Hello everyone,\tit's me\nNow I'm trying to fix a code"    # -e argument treats \t \n as escape sequence rather then as simple text
