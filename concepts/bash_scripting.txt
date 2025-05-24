@@ -8,8 +8,31 @@ echo -e "Hello everyone,\tit's me\nNow I'm trying to fix a code"    # -e argumen
 colors=("Red", "Green", "Blue")
 echo "${colors[@]}"     # prints all the elements of the array
 
-
+=============================================================================================
 #   $0 represents the name of the script itself.
 #   $# represents the number of arguments passed to the script.
 #   $@ represents all the arguments passed to the script.
 #   $? represents the exit status of the last command executed in the script.
+=============================================================================================
+
+cat << EOF > document.txt
+this is line 1 of the document
+this is line 2 of the document
+this is line 3 of the document
+EOF
+
+# << EOF starts a heredoc block, which allows us to input multi-line text.
+# The text within the heredoc block is then written to the file "document.txt".
+# EOF marks the end of the heredoc block.
+# When you run this script, it will create a file named "document.txt" with the specified multi-line text. Each heredoc block line will be written to the file "document.txt"
+=============================================================================================
+
+# syntax for if statement
+if [ $number -gt 10 ]; then
+        echo "number is greater than 10"
+elif [ $number -eq 10 ]; then
+        echo "number is equal to 10"
+else
+        echo "number not greater than 10"
+fi
+=============================================================================================
