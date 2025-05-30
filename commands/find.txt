@@ -14,3 +14,4 @@ find /path -type f -empty     # Empty files
 find /path -type d -empty     # Empty directories
 find /path -name "*.log" -mtime -7      # Find .log files modified in the last 7 days
 find /path -atime +60 -type f -delete   # Find files not accessed in 60 days and delete them
+find /path/to/search -user username     # Find Files Owned by a Specific User
