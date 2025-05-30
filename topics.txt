@@ -17,3 +17,4 @@
 17. sudoers file and winbind
 18. parted/partprobe/fdisk command
 19. file system issues (clearing space/recovery of directory)
+20. systemd (importance and how to set up)
