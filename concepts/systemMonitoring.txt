@@ -1,0 +1,9 @@
+few commands for system monitoring
+1. top
+2. df
+3. dmesg  # used to display kernel log messages, providing valuable information about hardware, device drivers, and system events
+4. iostat   # utility for monitoring system input/output (I/O) statistics, including CPU utilization and disk performance
+5. netstat (now mostly ss and ip is used)
+6. free
+7. cat /proc/cpuinfo
+8. cat /proc/meminfo
