@@ -45,3 +45,13 @@ SystemD
 - You can find the different runlevels files under
     . /usr/lib/systemd/system
     . ls -l runlevel*
+
+
+Runlevel    Target Units                            Description
+0           runlevelo.target/poweroff.target        Power off the system.
+1           runlevel1.target/rescue.target          Single User mode without GUI, without networking.
+2           runlevel2.target/multi-user.target      multi-user mode without GUI, without networking.
+3           runlevel3.target/multi-user.target      multi-user mode without GUI, but with networking.
+4           runlevel4.target/multi-user.target      multi-user mode (for research use only).
+5           runlevel5.target/graphical.target       Graphical mode multiuser, with networking.
+6           runlevel6.target/reboot.target          Reboot the system.
