@@ -1,0 +1,7 @@
+[ To regenrate initramfs file ]
+# first go into rescue mode
+# now rebuild the initramfs file for the kernel that is corrupted
+dracut -f initramfs-<kernel-version>.img <kernel-version>       # this will rebuild the initramfs file. -f can be used if the file already exists and we want to overite it.
+# now check in /boot if the file is recreated
+grubby --default-kernel     # verify the right kernel version is set as default
+reboot now  # restart the system and choose the right kernel in grub menu
