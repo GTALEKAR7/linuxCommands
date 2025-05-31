@@ -5,3 +5,13 @@ dracut -f initramfs-<kernel-version>.img <kernel-version>       # this will rebu
 # now check in /boot if the file is recreated
 grubby --default-kernel     # verify the right kernel version is set as default
 reboot now  # restart the system and choose the right kernel in grub menu
+
+
+[ To regenrate initramfs file using grub ]
+# In grub boot menu press 'c'. This will take you to grub cli
+ls  # This will give the partition info
+set root=(hd0,msdos1)
+linux16 /vmlinuz-<kernel-version> roo=/dev/mapper/centos-root ro    # make sure to select the old working kernel version
+initrd16 /initramfs-<kernel-version>.img    # make sure to select the old working kernel version
+boot
+# This will boot the system to the old working kernel version and from there now you can reinstall the corrupted kernel version using yum/dnf
