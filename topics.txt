@@ -1,9 +1,9 @@
 - Sticky bit, uid, gid, umask and it's associated concept
-- Difference between rhel8 and rhel9
+- Difference between rhel8 and rhel9, between rhel 7 and rhel 8
 - pre-requisites and post installation of leapp upgrade
 - NFS
 - Priority of process (nice command)
-- Add wget, curl, tar, find command also
+- Add wget, curl, tar command
 - swap concept and why do we need it
 - inode, id command
 - samba configuration
@@ -15,3 +15,6 @@
 - how to extend swap size
 - chroot command and functioning
 - fstab entry, crontab. What's in /etc/passwd and /etc/shadow
+- sed, cut, awk commands
+- port numbers
+- logging (system logging, journalctl)
