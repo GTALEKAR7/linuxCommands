@@ -1,21 +1,17 @@
-1. Sticky bit, uid, gid, umask and it's associated concept
-2. red hat package manager, yum. Installing with depedency or without depedency.
-3. concept of runlevel and how to change via cli
-4. Difference between rhel8 and rhel9
-5. pre-requisites and post installation of leapp upgrade
-6. NFS
-7. Priority of process (nice command)
-8. Add wget, curl, tar, find command also
-9. swap concept and why do we need it
-10. root password resest using rd.break
-11. kernel panic
-12. inode, id command
-13. samba configuration
-14. adding users and handling them
-15. what to do if you go into grub mode (kernel patching issues). kernel panic
-16. symlink (ln command)
-17. sudoers file and winbind
-18. parted/partprobe/fdisk command
-19. file system issues (clearing space/recovery of directory)
-20. systemd (importance and how to set up)
-21. how to extend swap size
+- Sticky bit, uid, gid, umask and it's associated concept
+- Difference between rhel8 and rhel9
+- pre-requisites and post installation of leapp upgrade
+- NFS
+- Priority of process (nice command)
+- Add wget, curl, tar, find command also
+- swap concept and why do we need it
+- inode, id command
+- samba configuration
+- symlink (ln command)
+- sudoers file and winbind
+- parted/partprobe/fdisk command
+- file system issues (clearing space/recovery of directory)
+- systemd (importance and how to set up)
+- how to extend swap size
+- chroot command and functioning
+- fstab entry, crontab. What's in /etc/passwd and /etc/shadow
