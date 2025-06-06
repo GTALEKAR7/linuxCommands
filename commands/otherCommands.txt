@@ -1,6 +1,8 @@
 [ ssh-keygen ]
 ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa -C "<email ID>"      # Generate a New SSH Key Pair (Default RSA)
 ssh-copy-id user@remote-server      # Copy SSH Key to a Remote Server (for Passwordless Login)
+# sshd logs are typically stored in /var/log/secure file
+journalctl -u sshd  # to check the sshd logs
 
 [ vagrant ]
 vagrant init    # creates a Vagrantfile in the current working directory
