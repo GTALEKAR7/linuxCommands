@@ -1,3 +1,5 @@
+[ User management commands to handle users ]
+
 useradd <user_name>     # creates a new user
 id <user_name>          # gives info about the user for eg. uid,gid
 useradd -g <group_name> -s /bin/bash -c "description" -m -d /home/<user_name> <user_name>   # -m to create home directory| -d mention the path for user home directory
@@ -6,4 +8,24 @@ userdel -r <name_of_user> # will remove home directory
 userdel -f <name_of_user> # force delete even if the user is logged in
 usermod -G <group_name> <user_name> # To add user to a new group, but default group will remain same
 usermod -g <group_name> <user_name> # To change the default group
-# -L -U  (Lock/Unlock a user)
+# -l -u  (Lock/Unlock a user using usermod command)
+
+users      # prints the usernames of users currently logged in, without duplicates per sessios
+who     # Shows who is logged in with terminals and time
+w       # Shows who is logged in and what they are doing
+id      # Shows user ID and group ID of current/target user
+last    # Shows login history
+whoami  # Shows the currently logged-in user (effective user)
+passwd -S username  ( --status can also we used to check the password status of the user)
+passwd -u username ( unlocks a user)
+passwd -l username ( locks a user)
+
+[ chage command - used to view and modify user password aging policies ]
+chage -l username       # Lists the current password aging settings for the user.
+chage -M username       # Sets the maximum number of days the password is valid
+chage -m username       # Sets the minimum number of days before the user can change the password again
+chage -W username       # Sets the number of days of warning before password expires
+chage -I username       # Sets the number of days after password expiration that the account is disabled
+chage -E username       # Sets the account expiration date (in YYYY-MM-DD format or number of days since epoch)
+chage -d username       # Sets the date of the last password change
+chage -M -1 username    # password will never expire for the user
