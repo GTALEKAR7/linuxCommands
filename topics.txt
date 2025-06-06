@@ -18,3 +18,4 @@
 - sed, cut, awk commands
 - port numbers
 - logging (system logging, journalctl)
+- dive little more into networking concepts 
