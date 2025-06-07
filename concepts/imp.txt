@@ -1,0 +1,34 @@
+[ fstab entry ]
+<file system>  <mount point>  <type>  <options>  <dump>  <pass>
+UUID=123abc45-678d-90ef-1234-56789abcdef0  /mnt/data  ext4  defaults  0  2      # for example
+
+1. <file system>
+- The device to be mounted
+- Can be a device name (e.g., /dev/sda1), UUID (recommended), or LABEL
+- Use blkid to find UUIDs of device
+
+2. <mount point>
+- Directory where the device will be mounted
+- Must exist before mount (e.g., /, /home, /mnt/data)
+
+3. <type>
+- Filesystem type: ext4, xfs, ntfs, vfat, swap, nfs, etc
+
+4. <options>
+Mount options (comma-separated). Common options:
+- defaults: Common default options (rw, suid, dev, exec, auto, nouser, async)
+- noauto: Don’t mount automatically at boot
+- ro: Mount read-only
+- rw: Mount read-write
+- user: Allow a non-root user to mount
+- nofail: Don't fail boot if the device is missing
+- uid=1000: Set owner for FAT/NTFS volumes
+
+5. <dump>
+- Used by dump backup utility. Usually set to 0 (disable) or 1 (enable)
+
+6. <pass>
+Used by fsck (filesystem check) at boot:
+    0: Do not check
+    1: Check first (usually root /)
+    2: Check after / (e.g., /home, /var)
