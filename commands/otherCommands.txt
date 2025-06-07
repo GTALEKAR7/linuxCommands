@@ -4,6 +4,18 @@ ssh-copy-id user@remote-server      # Copy SSH Key to a Remote Server (for Passw
 # sshd logs are typically stored in /var/log/secure file
 journalctl -u sshd  # to check the sshd logs
 
+[ sed (String editor) ]
+sed 's/<string_from_the_file>/<string_that_you_want_to_replace/' filename.txt       # Here s indicates string value and will makes changes in filename. Note: this does not actually modify the file but rather just give replaced output
+sed -i 's/<string_from_the_file>/<string_that_you_want_to_replace/' filename.txt      # -i will make changes in file
+
+[ awk ]
+# awk command assumes that each space between words as delimitter
+awk '{print}' filename.txt      # will just print the file as it is
+awk '{print $1}' filename.txt        # prints the first word of the column
+awk '{print $1,$3}' filename.txt     # prints the first and third column of the file
+awk '{print $NF}' filename.txt       # prints last column of the file
+awk -F':' '{print $1}' /etc/passwd      # -F makes : as the delimitter instead of space
+
 [ vagrant ]
 vagrant init    # creates a Vagrantfile in the current working directory
 vagrant init ubuntu/jammy64     # creates a Vagrantfile with Ubuntu 22.04 LTS as the base OS
