@@ -16,6 +16,13 @@ awk '{print $1,$3}' filename.txt     # prints the first and third column of the 
 awk '{print $NF}' filename.txt       # prints last column of the file
 awk -F':' '{print $1}' /etc/passwd      # -F makes : as the delimitter instead of space
 
+[ cut ]
+cut -b 1 filename.txt       # prints the first char of the file. -b is for byte
+cut -b 7,8,9,10,11 filename.txt     # prints characters from 7 to 11 of the file
+cut -b 7-11 filename.txt            # prints char from 7 to 11 of the file
+cut -c 7-11 filename.txt            # -c is to output char from 7th char to 11th char. In few cases the output will be same as -b argument
+cut -d " " -f 1,2 filename.txt      # -d is for delimitter and f is for fields. In this case it will print first two words of the file
+
 [ vagrant ]
 vagrant init    # creates a Vagrantfile in the current working directory
 vagrant init ubuntu/jammy64     # creates a Vagrantfile with Ubuntu 22.04 LTS as the base OS
