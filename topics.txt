@@ -22,3 +22,4 @@
 - ulimit, fuser, detecting running process in nfs mount
 - focus on common issues and resolution as linux and middleware admin
 - challenges in linux and middleware admin
+- add more explanation to the commands or give and proper overview of it
