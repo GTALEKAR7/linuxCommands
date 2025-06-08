@@ -1,0 +1,9 @@
+- Rhel 7 and rhel 8 both have xfs as it's file system but 7 supported 500TB whereas 8 supports 1PB (Petabyte)
+- Kernel version: rhel 7 - 3.10.0 (Maipo) and rhel 8 - 4.18.0 (Oota)
+- Yum Repo: rhel 7 has it's repos combined into one whereas in rhel 8 for apps it will have AppStream repo and for basic packages will in BaseOS repo
+- Time synchronisation: rhel 7 - ntp and chronyd || rhel 8 - chronyd
+- Package Management: rhel 7 - Yum version 3 || rhel 8 - Yum version 4 or dnf 
+- Default display server: rhel 7 - Xorg or X11 || rhel 8 - Wayland
+- Default Network Packet filtering: rhel 7 - iptables || rhel 8 - nftables
+- VM Management: rhel 7 - virt manager || rhel 8 - Default Cockpit and virt manager
+- NFS configuration file: rhel 7 - /etc/sysconfig/nfs Default NFS || rhel 8 - /etc/nfs.conf  NFS over UDP is no longer supported 
