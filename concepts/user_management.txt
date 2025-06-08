@@ -29,3 +29,29 @@ chage -I username       # Sets the number of days after password expiration that
 chage -E username       # Sets the account expiration date (in YYYY-MM-DD format or number of days since epoch)
 chage -d username       # Sets the date of the last password change
 chage -M -1 username    # password will never expire for the user
+
+===================================================================================================
+The files /etc/passwd and /etc/shadow are both critical to user account management in Unix/Linux systems, but they serve different purposes and have different access permissions
+
+/etc/passwd contains
+- username: The login name
+- password: Placeholder (x) if shadow passwords are used
+- UID: User ID
+- GID: Primary group ID
+- comment: Full name or other info
+- home_directory: Path to the user's home
+- shell: Default shell on login
+- Readable by all users: -rw-r--r--
+- Allows programs to map UIDs to usernames, etc
+
+/etc/shadow contains
+- password: Hashed password (e.g., SHA-512)
+- lastchg: Days since epoch when password was changed
+- min: Minimum days between password changes
+- max: Maximum days password is valid
+- warn: Days before expiration to warn the user
+- inactive: Days after expiration before account is disabled
+- expire: Absolute expiration date (days since epoch)
+- reserved: Reserved field (unused)
+- Only root-readable: -rw-------
+- Protects passwords from non-privileged access
