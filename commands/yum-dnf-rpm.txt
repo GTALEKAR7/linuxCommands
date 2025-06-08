@@ -16,10 +16,12 @@ dnf list available  # list the available packages in repositories
 dnf list installed  # list the packages intalled in the server
 dnf info <package>  # gives information about the package
 dnf search <package>    # used to search for packages in the enabled repositories
+dnf deplist     # used to display the dependency information for a specific package
 rpm -ivh <package>  # installs a package
 rpm -evh <package>  # erases a package
 rpm -U <package>    # Updates a package
 rpm -qa     # Lists all the packages that has been installed
 rpm -qi <package>   # gives the detailed information about the package
 rpm -qc <package>   # gives the info about the config files of the package
+rpm -qa --qf '%{NAME} %{SIGPGP:pgpsig}\n'       # checks for Unsigned or foreign packages
 needs-restarting -r     # Tells if system reboot is required after updation of packages(yum-utils package required to run the command)
