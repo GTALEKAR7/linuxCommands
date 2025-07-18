@@ -3,9 +3,9 @@
 - pre-requisites and post installation of leapp upgrade
 - NFS
 - Priority of process (nice command)
-- Add wget, curl, tar command
+- Add wget, curl, tar, rsync command
 - swap concept and why do we need it
-- inode, id command
+- inode, id command (How to fix if inode is full)
 - samba configuration
 - symlink (ln command)
 - sudoers file and winbind
@@ -22,4 +22,4 @@
 - ulimit, fuser, detecting running process in nfs mount
 - focus on common issues and resolution as linux and middleware admin
 - challenges in linux and middleware admin
-- add more explanation to the commands or give and proper overview of it
+- add more explanation to the commands or give a proper overview of it
