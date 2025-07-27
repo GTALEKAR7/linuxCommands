@@ -31,3 +31,5 @@
 - restructure the commands to work properly with appropriate details
 - learn about SELinux
 - how to scan a disk manually
+- possible issues with df command loading. Research on it
+- server is rebooting continously, what could be the possible reasons
