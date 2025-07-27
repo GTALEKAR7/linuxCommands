@@ -29,3 +29,5 @@
 - Learn about postfix and be familiar with mailx command (how to send mail to another server)
 - ITIL process and agile methodology
 - restructure the commands to work properly with appropriate details
+- learn about SELinux
+- how to scan a disk manually
