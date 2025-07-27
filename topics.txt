@@ -23,3 +23,9 @@
 - focus on common issues and resolution as linux and middleware admin
 - challenges in linux and middleware admin
 - add more explanation to the commands or give a proper overview of it
+- Focus more on patching issues
+- Focus more on nfs and the issues with it
+- Learn about dns and it's setup and structure
+- Learn about postfix and be familiar with mailx command (how to send mail to another server)
+- ITIL process and agile methodology
+- restructure the commands to work properly with appropriate details
