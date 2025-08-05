@@ -6,3 +6,23 @@ SElinux(Security Enhanced linux)
 - SELinux adds Mandatory Access Control (MAC) to the linux kernel. It can limit the damage that can result from exploitation of vulnerabilities
 
 ls -Z file.txt      # Labes containing security relevant information that are on processes, Linux users and files are called SELinux context.
+
+===============================================================================================
+for example below:
+[root@cent-node1 vagrant]# ls -Z Vagrantfile
+unconfined_u:object_r:default_t:s0 Vagrantfile
+
+unconfined_u is selinux user
+object_r is the role
+default_t is the type of file(usually shows which user and the directory where it is created)
+s0 represents the security level of this file
+===============================================================================================
+
+SELinux modes:
+- Enforcing :- SELinux policy is enforced. SELinux denies access based on SELinux policy rules
+- Permissive :- SElinux policy is not enforced. SELinux does not deny access but denails are logged for actions that would have been denied if running in enforcing mode
+- Disabled :- SElinux is disabled. Only DAC rules will be used
+===============================================================================================
+- setenforce utility is used to set the SELinux modes
+- getenforce is used to check which SELinux mode is currently being used
+- Though these are temprorary changes and will set to default post reboot
