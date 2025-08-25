@@ -33,3 +33,12 @@
 - how to scan a disk manually
 - possible issues with df command loading. Research on it
 - server is rebooting continously, what could be the possible reasons
+- Linux cli tools required for system administration
+- DNS concepts
+- Using salt/ansible for building IaaC
+- MariaDB
+- Docker
+- Nginx
+- Networking Concepts
+- Familiar with Linux based firewall
+- http and TLS
