@@ -1,0 +1,19 @@
+strace -- command
+
+concept: 
+- Every user-space program relies on the kernel to access hardware and system resources. The bridge between user programs and the kernel is the system call (syscall).
+- strace is a powerful tool to trace syscalls made by a process. It’s extremely useful for debugging issues like:
+  1. Why a program can’t find a config file
+  2. Permission errors
+  3. Library or socket failures
+
+Note: need to install "strace" utility
+
+Uses of strace command:
+1. Debugging Application Behavior
+    - Shows which system calls a program makes (e.g., open, read, write, socket).
+    - Useful to see if a program is failing due to missing files, permissions, or wrong paths.
+    - eg. $strace ./my_program
+2. Troubleshooting "File Not Found" Errors
+    - Tracks file access attempts (openat, stat, etc.) to see exactly which file path the program is looking for
+    - eg. $strace -e openat ./app
