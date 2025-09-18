@@ -17,3 +17,28 @@ Uses of strace command:
 2. Troubleshooting "File Not Found" Errors
     - Tracks file access attempts (openat, stat, etc.) to see exactly which file path the program is looking for
     - eg. $strace -e openat ./app
+3. Monitoring System Calls of a Running Process
+    - Attach to an already running process by PID.
+    - eg. $strace -p <PID>
+4. Performance & Bottleneck Analysis
+    - Measure time spent in system calls (-T option).
+    - eg. $strace -T ./script.sh  # Can reveal slow I/O, excessive syscalls, or blocked processes
+5. Tracing Network Activity
+    - Show socket-related syscalls (e.g., connect, sendto, recvfrom).
+    - eg. $strace -e trace=network ./server
+6. Debugging Permission Issues
+    - See if a process gets EACCES (permission denied) when accessing files.
+    - eg. $strace -e openat ./program
+7. Finding Dependencies / Missing Libraries
+    - Watch how a binary loads shared libraries.
+    - eg. $strace -e openat ldd ./binary
+8. Capturing Signals
+    - Shows signals received by a process (e.g., SIGSEGV, SIGINT).
+    - eg. $strace -e signal ./program
+9. Filtering by Syscalls
+    - Trace only a specific category (e.g., file, memory, network, signals).
+    - $strace -e trace=file ./program    # Only file-related syscalls
+    - $strace -e trace=memory ./program  # Only memory syscalls
+10. Generating Logs for Analysis
+    - Save trace output to a file for later review.
+    - eg. $strace -o trace.log ./program
