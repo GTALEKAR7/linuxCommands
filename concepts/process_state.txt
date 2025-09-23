@@ -1,0 +1,10 @@
+Every process in Linux has a state, which tells you what it’s doing (or waiting for). These states show up when you run tools like ps or top.
+The most common codes:
+  - R (Running/Ready) → process is executing on CPU or waiting to be scheduled
+  - S (Sleeping) → waiting for an event (e.g., disk I/O, network)
+  - D (Uninterruptible Sleep) → usually waiting on hardware I/O; cannot be killed until it finishes
+  - T (Stopped/Traced) → paused (e.g., with kill -STOP) or being debugged
+  - Z (Zombie) → process has finished, but parent hasn’t reaped it yet
+  - I (Idle) → kernel threads waiting for work
+
+  ps -eo pid,stat,cmd --sort=stat    # lists all processes with their states
