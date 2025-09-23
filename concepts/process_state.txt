@@ -7,4 +7,6 @@ The most common codes:
   - Z (Zombie) → process has finished, but parent hasn’t reaped it yet
   - I (Idle) → kernel threads waiting for work
 
-  ps -eo pid,stat,cmd --sort=stat    # lists all processes with their states
+ ps -eo pid,stat,cmd --sort=stat    # lists all processes with their states
+ 
+ ps -o ppid= -p <zombie_pid>    # To check the parent process of zombie pid 
