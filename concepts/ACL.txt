@@ -1,0 +1,29 @@
+Linux traditionally uses UNIX permissions (user, group, others) with rwx flags. But in complex environments, these basic permissions aren’t enough. That’s where ACLs (Access Control Lists) come in.
+  - Traditional permissions = only 3 sets of rules
+  - ACLs = allow fine-grained permissions for multiple users and groups
+  - ACLs don’t override traditional permissions — they extend them.
+  - If both exist, the kernel checks ACL first, then falls back to normal mode bits.
+  - You’ll know a file has an ACL if ls -l shows a + at the end of permissions
+      - for eg: -rw-r-----+ 1 root root  42 Sep 23  file.txt
+  - Most modern Linux filesystems (like ext4, xfs, btrfs) support ACL
+
+Example for ACL and commands:
+ls -l testfile    # Check current permissions
+getfacl testfile    # views the ACL for the file basically it will show current permissions
+setfacl -m u:alice:r testfile     # Gives the user Alice read access even if the user is not the owner or part of the group
+getfacl testfile    # Check the status again. We should see alice user in the output with read permssions
+# example output below in between equal sign lines
+=====================
+# file: notes.txt
+# owner: gautam
+# group: devs
+user::rw-
+user:alice:r--
+group::r--
+mask::r--
+other::---
+=====================
+
+setfacl -x u:alice notes.txt    # Removes a specific ACL
+setfacl -b notes.txt      # Removes all ACL
+setfacl -m d:u:alice:rwx project/      # any new files created inside will inherit those ACLs
